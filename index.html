@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>POP-FIT — Bracelets pour Swatch Royal Pop</title>
+  <meta name="description" content="Précommandez des bracelets compatibles avec la montre Swatch x Audemars Piguet Royal Pop. Détachez, clipsez, portez." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="#" class="logo">
+      <svg viewBox="0 0 40 40" width="28" height="28" aria-hidden="true">
+        <polygon points="12,2 28,2 38,12 38,28 28,38 12,38 2,28 2,12" fill="#111" stroke="currentColor" stroke-width="2"/>
+        <polygon points="14,6 26,6 34,14 34,26 26,34 14,34 6,26 6,14" fill="none" stroke="currentColor" stroke-width="1"/>
+      </svg>
+      <span>POP·FIT</span>
+    </a>
+    <nav class="site-nav">
+      <a href="#concept">Concept</a>
+      <a href="#catalogue">Catalogue</a>
+      <a href="#" id="myPreordersLink">Mes précommandes</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <span class="badge">Drop · 16 mai 2026</span>
+        <h1>Habillez votre <span class="hero-accent">Royal&nbsp;Pop</span>.</h1>
+        <p class="hero-sub">La montre se détache de sa lanière. Choisissez le bracelet qui vous ressemble&nbsp;: NATO tissé, maillons octogonaux ou silicone bioceramic — dans les 8&nbsp;colorways officiels.</p>
+        <div class="hero-cta">
+          <a href="#catalogue" class="btn btn-primary">Précommander</a>
+          <a href="#concept" class="btn btn-ghost">Comment ça marche</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="concept" id="concept">
+      <h2>Trois gestes, mille looks.</h2>
+      <ol class="concept-steps">
+        <li>
+          <div class="step-art step-art-1" aria-hidden="true"></div>
+          <h3>1. Détachez</h3>
+          <p>Pressez le clip d'origine&nbsp;: votre Royal Pop se libère de sa lanière en un instant.</p>
+        </li>
+        <li>
+          <div class="step-art step-art-2" aria-hidden="true"></div>
+          <h3>2. Choisissez</h3>
+          <p>Trois familles de bracelets POP·FIT, déclinées dans les 8 colorways officiels.</p>
+        </li>
+        <li>
+          <div class="step-art step-art-3" aria-hidden="true"></div>
+          <h3>3. Clipsez</h3>
+          <p>Le boîtier 40&nbsp;mm vient se fixer sur le clip POP·FIT. Vous changez de style en 5 secondes.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="catalog" id="catalogue">
+      <header class="catalog-head">
+        <h2>Catalogue</h2>
+        <p class="catalog-sub">24 références — précommande ouverte jusqu'au drop.</p>
+      </header>
+
+      <div class="filters">
+        <div class="filter-group">
+          <span class="filter-label">Bracelet</span>
+          <div class="chips" id="braceletFilters" role="group" aria-label="Filtrer par bracelet"></div>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Colorway</span>
+          <div class="chips colorway-chips" id="colorwayFilters" role="group" aria-label="Filtrer par colorway"></div>
+        </div>
+        <button class="btn-link" id="resetFilters" type="button">Réinitialiser</button>
+      </div>
+
+      <div class="grid" id="catalogGrid" aria-live="polite"></div>
+      <p class="empty" id="emptyState" hidden>Aucun produit ne correspond aux filtres.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>POP·FIT</strong>
+        <p>Bracelets indépendants. Non affilié à Swatch ou Audemars Piguet. "Royal Pop" est une marque de leurs détenteurs respectifs.</p>
+      </div>
+      <div class="footer-meta">
+        <p>Drop&nbsp;: 16.05.2026</p>
+        <p>contact@pop-fit.example</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal précommande -->
+  <dialog id="preorderModal" class="modal" aria-labelledby="preorderTitle">
+    <form method="dialog" id="preorderForm" class="modal-card">
+      <button type="button" class="modal-close" aria-label="Fermer" data-close>×</button>
+      <div class="modal-summary" id="preorderSummary"></div>
+      <h3 id="preorderTitle">Précommander</h3>
+      <p class="modal-lead">Réservez sans paiement. Nous vous écrirons à l'expédition.</p>
+
+      <label class="field">
+        <span>Taille du poignet</span>
+        <div class="size-row">
+          <label><input type="radio" name="size" value="S" required /> S · 14-16 cm</label>
+          <label><input type="radio" name="size" value="M" /> M · 16-18 cm</label>
+          <label><input type="radio" name="size" value="L" /> L · 18-21 cm</label>
+        </div>
+      </label>
+
+      <label class="field">
+        <span>Email</span>
+        <input type="email" name="email" required placeholder="vous@exemple.com" />
+      </label>
+
+      <label class="field field-check">
+        <input type="checkbox" name="cgv" required />
+        <span>J'accepte d'être contacté pour cette précommande.</span>
+      </label>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" data-close>Annuler</button>
+        <button type="submit" class="btn btn-primary">Réserver</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Modal mes précommandes -->
+  <dialog id="preordersListModal" class="modal" aria-labelledby="preordersListTitle">
+    <div class="modal-card">
+      <button type="button" class="modal-close" aria-label="Fermer" data-close>×</button>
+      <h3 id="preordersListTitle">Mes précommandes</h3>
+      <div id="preordersList"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" data-close>Fermer</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
